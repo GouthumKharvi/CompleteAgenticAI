@@ -1,103 +1,200 @@
-# Langchain Agent
+Single AI Agent System using LangChain
+======================================
 
-A minimal LangChain-based agent project built for experimentation and learning. This repository demonstrates how to set up a Python environment, install dependencies, and run a simple agent-driven application using environment-based API keys.
+A production-style AI Agent built using LangChain's ReAct framework. The agent can reason, decide which tool to use, retrieve external information, and generate responses using an LLM.
 
-## Features
+This project demonstrates how Agentic AI systems combine reasoning, tool usage, and external APIs to solve user queries beyond the knowledge available inside the LLM.
 
-- Simple LangChain agent scaffold
-- Environment variable support via `.env`
-- Example app entrypoints: `app.py`, `main.py`
-- Notebook research work in `research/agent_demo.ipynb`
+Features
+--------
 
-## Technology
+*   ReAct (Reasoning + Acting) Agent Architecture
+    
+*   Web Search using Tavily Search API
+    
+*   Real-Time Weather Information using WeatherStack API
+    
+*   OpenRouter / OpenAI Model Integration
+    
+*   Terminal-Based Agent Execution (main.py)
+    
+*   Streamlit Web Application (app.py)
+    
+*   Environment Variable Management using .env
+    
+*   LangChain Agent Executor
+    
+*   Tool Calling and Observation Loop
+    
+*   Agent Reasoning Trace (Thought → Action → Observation → Final Answer)
+    
 
-- Python 3.11
-- LangChain
-- OpenAI API
-- dotenv for environment configuration
+Technologies Used
+-----------------
 
-## Architecture
+### AI & Agent Framework
 
-This repository is organized as a small Python agent project:
+*   LangChain
+    
+*   LangChain Community
+    
+*   LangChain OpenAI
+    
+*   ReAct Agent Pattern
+    
 
-- `app.py` - Primary application script for launching the agent logic.
-- `main.py` - Secondary entrypoint, typically used for testing or demo execution.
-- `requirements.txt` - Python dependencies required to run the project.
-- `.env` - Local environment variables containing API keys.
-- `research/agent_demo.ipynb` - Jupyter notebook for experimentation and development notes.
+### LLM
 
-The application follows a simple architecture:
+*   GPT-4o Mini (via OpenRouter)
+    
 
-1. Load configuration from `.env`.
-2. Initialize the agent and language model client.
-3. Execute the agent workflow through `app.py` or `main.py`.
+### External Tools
 
-## Getting Started
+*   Tavily Search API
+    
+*   WeatherStack API
+    
 
-### Prerequisites
+### Frontend
 
-- Python 3.11
-- `conda` or any Python virtual environment manager
+*   Streamlit
+    
 
-### Installation
+### Python Libraries
 
-```bash
-conda create -n langagent python=3.11 -y
-conda activate langagent
-pip install -r requirements.txt
-```
+*   Requests
+    
+*   Python Dotenv
+    
+*   Certifi
+    
 
-### Configuration
+Agent Architecture
+------------------
 
-Create a `.env` file at the repository root and add your API keys:
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   User Query       │       ▼  ┌─────────────┐  │ ReAct Agent │  └──────┬──────┘         │         ▼    Thought         │         ▼     Action         │   ┌─────┴─────┐   │           │   ▼           ▼  Tavily   WeatherStack  Search      API   │           │   └─────┬─────┘         ▼   Observation         ▼   Final Answer   `
 
-```dotenv
-OPENAI_API_KEY="your-openai-api-key"
-TAVILY_API_KEY="your-tavily-api-key"
-WEATHERSTACK_API_KEY="your-weatherstack-api-key"
-```
+Project Structure
+-----------------
 
-> Do not commit your `.env` file or secret keys to source control.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   5.Single AI Agent system using Langchain/  │  ├── README.md  ├── requirements.txt  ├── .env  ├── main.py  ├── app.py  ├── agent_demo.ipynb  └── 5.Single AI Agent system using Langchain.docx   `
 
-### Run the Project
+Environment Setup
+-----------------
 
-Use one of the Python entrypoints:
+### Create Virtual Environment
 
-```bash
-python app.py
-```
+Navigate to the project folder:
 
-or
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd "5.Single AI Agent system using Langchain"   `
 
-```bash
-python main.py
-```
+Create a virtual environment:
 
-### Notebook Exploration
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python -m venv venv   `
 
-Open the research notebook for additional agent demos and experiments:
+Activate the environment:
 
-```bash
-jupyter notebook research/agent_demo.ipynb
-```
+### Windows
 
-## Project Structure
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   venv\Scripts\activate   `
 
-```text
-.
-├── .env
-├── README.md
-├── app.py
-├── main.py
-├── requirements.txt
-└── research/
-    └── agent_demo.ipynb
-```
+Install Dependencies
+--------------------
 
-## Contribution
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
 
-Contributions are welcome. If you'd like to improve this repo, open an issue or submit a pull request with enhancements, bug fixes, or documentation improvements.
+Environment Variables
+---------------------
 
-## License
+Create a .env file in the project directory.
 
-This project is provided under an open source-friendly license. Add a license file if you want to publish this repository publicly.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   OPENAI_API_KEY=your_openrouter_api_key  TAVILY_API_KEY=your_tavily_api_key  WEATHERSTACK_API_KEY=your_weatherstack_api_key  GROQ_API_KEY=your_groq_api_key   `
+
+Running the Terminal Agent
+--------------------------
+
+Run:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python main.py   `
+
+Example:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Enter your query:  What is the weather in Bangalore today?   `
+
+The agent will:
+
+1.  Analyze the question
+    
+2.  Select the appropriate tool
+    
+3.  Call Tavily Search or WeatherStack
+    
+4.  Process observations
+    
+5.  Generate the final answer
+    
+
+Running the Streamlit Application
+---------------------------------
+
+Run:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run app.py   `
+
+Open:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   http://localhost:8501   `
+
+Example Agent Workflow
+----------------------
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Question:  What is the current weather in Bangalore?  Thought:  I need weather information.  Action:  get_weather_data  Action Input:  Bangalore  Observation:  Temperature: 29°C  Humidity: 65%  Thought:  I now know the answer.  Final Answer:  The current weather in Bangalore is 29°C with 65% humidity.   `
+
+Learning Outcomes
+-----------------
+
+This project demonstrates:
+
+*   Agentic AI Fundamentals
+    
+*   ReAct Architecture
+    
+*   Tool Calling
+    
+*   External API Integration
+    
+*   Prompt Engineering
+    
+*   Agent Executor Workflow
+    
+*   LangChain Framework
+    
+*   Environment Variable Management
+    
+*   LLM + Tool Collaboration
+    
+
+Future Enhancements
+-------------------
+
+*   Multi-Agent Systems
+    
+*   Memory Integration
+    
+*   LangGraph Workflows
+    
+*   RAG Pipelines
+    
+*   Database Integration
+    
+*   Voice-Based Agent Interface
+    
+
+Author
+------
+
+**Gouthum Kharvi**
+
+GitHub:[https://github.com/GouthumKharvi](https://github.com/GouthumKharvi)
+
+This project was built as part of an Agentic AI learning journey focused on understanding how modern AI Agents reason, use tools, and interact with external systems.
