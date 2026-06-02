@@ -91,7 +91,7 @@ git clone https://github.com/yourusername/ai-travel-agent.git
 cd ai-travel-agent
 ```
 
-### 2. Create a virtual environment
+### 2. Create a virtual environment 
 
 ```bash
 python -m venv venv
