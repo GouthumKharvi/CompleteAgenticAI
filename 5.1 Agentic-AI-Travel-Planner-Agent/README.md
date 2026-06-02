@@ -7,6 +7,8 @@
 <p align="center">
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2000&pause=700&color=00C853&center=true&vCenter=true&width=1000&lines=User+%E2%86%92+AI+Agent;AI+Agent+%E2%86%92+Country+API;AI+Agent+%E2%86%92+Weather+API;AI+Agent+%E2%86%92+Exchange+Rate+API;AI+Agent+%E2%86%92+Tavily+Search;Generating+Personalized+Travel+Plan+%E2%9C%88%EF%B8%8F" />
 </p>
+
+#Access Live wen app : https://ai-travel-planner-agent-3yni.onrender.com
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
