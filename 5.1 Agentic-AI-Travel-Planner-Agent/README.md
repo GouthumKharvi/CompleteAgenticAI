@@ -119,7 +119,7 @@ EXCHANGE_RATE_API_KEY=your_exchangerate_key_here
 
 ```bash
 # Streamlit Web App
-streamlit run travel_agent_app.py
+streamlit run app.py
 
 # CLI (Terminal)
 python main.py
@@ -233,7 +233,7 @@ Final Answer: ...
 
 ## 🖥️ Two Interfaces
 
-### 🌐 Streamlit Web App (`travel_agent_app.py`)
+### 🌐 Streamlit Web App (`app.py`)
 
 - Luxury dark editorial UI — Playfair Display + Outfit + JetBrains Mono fonts
 - Live **Agent Execution Trace** panel with macOS-style header and step counter
