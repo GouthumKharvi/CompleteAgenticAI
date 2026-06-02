@@ -1,9 +1,11 @@
 <div align="center">
 
-<h1 align="center">✈️ Travel Intelligence Agent</h1>
+
+
+<h1 align="center">🌍 AI Travel Planner Agent</h1>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=25&duration=2500&pause=1000&color=FF6D00&center=true&vCenter=true&width=950&lines=🌍+Country+Information;💱+Live+Currency+Conversion;🌦️+Real-Time+Weather;🏛️+Tourist+Attractions;🤖+Powered+by+LangChain+ReAct;✈️+AI+Travel+Planning+Assistant" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2000&pause=700&color=00C853&center=true&vCenter=true&width=1000&lines=User+%E2%86%92+AI+Agent;AI+Agent+%E2%86%92+Country+API;AI+Agent+%E2%86%92+Weather+API;AI+Agent+%E2%86%92+Exchange+Rate+API;AI+Agent+%E2%86%92+Tavily+Search;Generating+Personalized+Travel+Plan+%E2%9C%88%EF%B8%8F" />
 </p>
 <br/>
 
