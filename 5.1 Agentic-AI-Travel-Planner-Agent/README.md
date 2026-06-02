@@ -3,11 +3,11 @@
 <h1 align="center">✈️ AI Travel Planner Agent</h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" width="700">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=2500&pause=800&color=36BCF7&center=true&vCenter=true&width=900&lines=User+Query+Received...;Fetching+Country+Information...;Checking+Current+Weather...;Calculating+Exchange+Rate...;Searching+Tourist+Attractions...;Generating+Travel+Plan...;Travel+Plan+Ready+✓" />
 </p>
 
 <p align="center">
-  LangChain • ReAct Agent • Weather API • Exchange Rate API • REST Countries • Tavily Search
+🌍 Country API • 💱 Exchange Rate API • 🌦️ Weather API • 🔍 Tavily Search • 🤖 LangChain ReAct
 </p>
 
 <br/>
