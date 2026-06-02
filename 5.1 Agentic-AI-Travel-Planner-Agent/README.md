@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&text=Travel%20Planner%20Agent&fontSize=45&fontColor=ffffff&color=0:11998e,100:38ef7d&animation=fadeIn" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=AI%20Travel%20Agent&fontSize=50&fontColor=ffffff&color=0:4facfe,100:00f2fe" />
 
 <br/>
 
