@@ -255,20 +255,21 @@ Final Answer: ...
 ## 📦 Requirements
 
 ```txt
-langchain
-langchain-openai
-langchain-community
-openai
-streamlit
-requests
+langchain==0.1.16
+langchain-community==0.0.32
+langchain-core==0.1.42
+langchain-openai==0.1.3
+requests==2.31.0
+tavily-python
 python-dotenv
-certifi
+langchainhub
+streamlit
 ```
 
 Install all at once:
 
 ```bash
-pip install langchain langchain-openai langchain-community openai streamlit requests python-dotenv certifi
+pip install langchain==0.1.16 langchain-community==0.0.32 langchain-core==0.1.42 langchain-openai==0.1.3 requests==2.31.0 tavily-python python-dotenv langchainhub streamlit openai certifi
 ```
 
 <br/>
@@ -323,6 +324,7 @@ pip install langchain langchain-openai langchain-community openai streamlit requ
 <div align="center">
 
 **Built with ❤️ using LangChain ReAct · GPT-4o-mini · Real-world APIs**
+**Developed By Gouthum_Kharvi"
 
 *Part of the Complete Agentic AI Coursework*
 
