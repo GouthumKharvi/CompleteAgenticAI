@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&text=AI%20Travel%20Agent&fontSize=50&fontColor=ffffff&color=0:4facfe,100:00f2fe" />
+<p align="center">
+  <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" width="800">
+</p>
 
 <br/>
 
