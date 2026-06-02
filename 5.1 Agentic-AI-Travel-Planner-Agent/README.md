@@ -1,7 +1,13 @@
 <div align="center">
 
+<h1 align="center">✈️ AI Travel Planner Agent</h1>
+
 <p align="center">
-  <img src="https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif" width="800">
+  <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" width="700">
+</p>
+
+<p align="center">
+  LangChain • ReAct Agent • Weather API • Exchange Rate API • REST Countries • Tavily Search
 </p>
 
 <br/>
