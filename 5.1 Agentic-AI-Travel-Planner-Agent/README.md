@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=C9A55B&center=true&vCenter=true&width=600&lines=✈+AI+Travel+Agent;Powered+by+LangChain+ReAct;Real-time+Travel+Intelligence" alt="Typing SVG" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&text=Travel%20Planner%20Agent&fontSize=45&fontColor=ffffff&color=0:11998e,100:38ef7d&animation=fadeIn" />
 
 <br/>
 
