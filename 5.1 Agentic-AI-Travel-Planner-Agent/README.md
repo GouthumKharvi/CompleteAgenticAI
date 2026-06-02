@@ -1,15 +1,10 @@
 <div align="center">
 
-<h1 align="center">✈️ AI Travel Planner Agent</h1>
+<h1 align="center">✈️ Travel Intelligence Agent</h1>
 
 <p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=2500&pause=800&color=36BCF7&center=true&vCenter=true&width=900&lines=User+Query+Received...;Fetching+Country+Information...;Checking+Current+Weather...;Calculating+Exchange+Rate...;Searching+Tourist+Attractions...;Generating+Travel+Plan...;Travel+Plan+Ready+✓" />
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=25&duration=2500&pause=1000&color=FF6D00&center=true&vCenter=true&width=950&lines=🌍+Country+Information;💱+Live+Currency+Conversion;🌦️+Real-Time+Weather;🏛️+Tourist+Attractions;🤖+Powered+by+LangChain+ReAct;✈️+AI+Travel+Planning+Assistant" />
 </p>
-
-<p align="center">
-🌍 Country API • 💱 Exchange Rate API • 🌦️ Weather API • 🔍 Tavily Search • 🤖 LangChain ReAct
-</p>
-
 <br/>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
