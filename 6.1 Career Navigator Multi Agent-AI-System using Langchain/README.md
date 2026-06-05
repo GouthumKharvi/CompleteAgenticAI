@@ -86,20 +86,20 @@ The system is built around a **shared state memory architecture** — each agent
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                              USER INPUT                                      ║
 ║                                                                              ║
-║   Career Goal  ───────  Target Location  ──────  Years of Experience        ║
+║   Career Goal  ───────  Target Location  ──────  Years of Experience         ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
                                     │
                                     ▼
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                          SHARED STATE MEMORY                                 ║
 ║                                                                              ║
-║   state["jobs"]  │  state["skills"]  │  state["salary"]  │  state["roadmap"]║
-║   state["career_advice"]  │  state["final_report"]                          ║
+║   state["jobs"]  │  state["skills"]  │  state["salary"]  │  state["roadmap"] ║
+║   state["career_advice"]  │  state["final_report"]                           ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
           │              │              │              │              │
           ▼              ▼              ▼              ▼              ▼
     ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐
-    │ AGENT 1  │──▶│ AGENT 2  │──▶│ AGENT 3  │──▶│ AGENT 4  │──▶│ AGENT 5  │
+    │ AGENT 1  │──▶│ AGENT 2  │──▶│ AGENT 3  │──▶│ AGENT 4  │──▶│ AGENT 5│
     │  Job     │   │  Skill   │   │  Salary  │   │ Learning │   │ Career   │
     │  Search  │   │  Extract │   │  Intel   │   │  Roadmap │   │ Advisor  │
     └──────────┘   └──────────┘   └──────────┘   └──────────┘   └──────────┘
@@ -111,9 +111,9 @@ The system is built around a **shared state memory architecture** — each agent
                                     │
                                     ▼
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                     CAREER REPORT GENERATOR  (LCEL CHAIN)                   ║
+║                     CAREER REPORT GENERATOR  (LCEL CHAIN)                    ║
 ║                                                                              ║
-║   ChatPromptTemplate  ──▶  ChatOpenAI (GPT-4o-mini)  ──▶  StrOutputParser  ║
+║   ChatPromptTemplate  ──▶  ChatOpenAI (GPT-4o-mini)  ──▶  StrOutputParser   ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
                                     │
                                     ▼
