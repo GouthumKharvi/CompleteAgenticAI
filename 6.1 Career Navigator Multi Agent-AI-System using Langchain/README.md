@@ -293,7 +293,7 @@ SECTIONS GENERATED
 
 | Tool | API / Library | Purpose |
 |---|---|---|
-| `search_jobs()` | OpenWebNinja JSearch API | Live job search from Google Jobs |
+| `search_jobs()` | OpenWebNinja JSearch API | Live job search from Google & Glassdoor Jobs |
 | `extract_skills()` | Requests + BeautifulSoup + Readability-LXML + Trafilatura | Multi-strategy job posting scraper |
 | `salary_research()` | OpenWebNinja Job Salary API | Salary benchmarking and market data |
 | `find_courses()` | Tavily Search API | Learning resource discovery |
