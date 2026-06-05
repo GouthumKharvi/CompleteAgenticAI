@@ -19,7 +19,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--4o--mini-412991?style=for-the-badge)](https://openrouter.ai)
 [![Tavily](https://img.shields.io/badge/Tavily-Search_API-00B4D8?style=for-the-badge)](https://tavily.com)
-[![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
+
 
 ---
 
