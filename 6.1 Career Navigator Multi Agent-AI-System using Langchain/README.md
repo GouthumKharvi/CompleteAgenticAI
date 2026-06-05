@@ -20,9 +20,9 @@
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--4o--mini-412991?style=for-the-badge)](https://openrouter.ai)
 [![Tavily](https://img.shields.io/badge/Tavily-Search_API-00B4D8?style=for-the-badge)](https://tavily.com)
 
+---
 
-
-> **Six autonomous AI agents. One intelligent pipeline. Your complete career strategy — built from live market data.**
+**Six autonomous AI agents. One intelligent pipeline. Your complete career strategy — built from live market data.**
 
 </div>
 
