@@ -9,7 +9,7 @@
  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝ 
 ```
 
-# 💼 Career Navigator AI
+# 💼 Career Navigator Multiagent AI
 ### *AI-Powered Multi-Agent Career Intelligence Platform*
 
 ---
