@@ -5,7 +5,7 @@ import os
 import requests
 import markdown
 from dotenv import load_dotenv
-from src.pipelines.pipeline import run_career_pipeline
+from src.pipelines.pipeline import run_career_pipeline 
 
 # ─────────────────────────────────────────────────────────────
 # ENV + AI CLIENT (OpenWebNinja → GPT-5)
