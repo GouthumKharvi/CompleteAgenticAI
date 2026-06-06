@@ -3,6 +3,7 @@ import json
 import re
 import os
 import requests
+import markdown
 from dotenv import load_dotenv
 from src.pipelines.pipeline import run_career_pipeline
 
@@ -15,30 +16,41 @@ OWN_URL   = "https://api.openwebninja.com/chatgpt/chat"
 OWN_MODEL = "gpt-5"
 
 def own_chat(system: str, messages: list, max_tokens: int = 1024) -> str:
-    """Call OpenWebNinja ChatGPT API and return text response."""
     try:
+        prompt = f"System Instructions:\n{system}\n\n"
+
+        for msg in messages:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            prompt += f"{role.upper()}: {content}\n\n"
+
         payload = {
-            "model": OWN_MODEL,
-            "max_tokens": max_tokens,
-            "messages": [{"role": "system", "content": system}] + messages
+            "message": prompt,
+            "markdown": True
         }
+
         resp = requests.post(
             OWN_URL,
-            headers={"Authorization": f"Bearer {OWN_KEY}", "Content-Type": "application/json"},
-            json=payload, timeout=60
+            headers={
+                "X-API-Key": OWN_KEY,
+                "Content-Type": "application/json"
+            },
+            json=payload,
+            timeout=60
         )
+
+        print("Status:", resp.status_code)
+        print("Response:", resp.text)
+
         data = resp.json()
-        # Handle both OpenAI-style and direct response formats
-        if "choices" in data:
-            return data["choices"][0]["message"]["content"]
-        elif "content" in data:
-            return data["content"]
-        elif "message" in data:
-            return data["message"]
-        else:
-            return f"⚠️ Unexpected response: {json.dumps(data)[:200]}"
+
+        if data.get("status") == "OK":
+            return data["data"]["reply_text"]
+
+        return f"API Error: {data}"
+
     except Exception as e:
-        return f"⚠️ API Error: {e}"
+        return f"API Error: {str(e)}"
 
 # ─────────────────────────────────────────────────────────────
 # PAGE CONFIG
@@ -966,11 +978,22 @@ Return ONLY valid JSON array, no markdown:
         if st.session_state.interview_qa:
             st.markdown(f'<div style="font-size:.72rem;color:#475569;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 12px;">{len(st.session_state.interview_qa)} Questions Generated</div>',unsafe_allow_html=True)
             for idx,qa in enumerate(st.session_state.interview_qa):
+                
+
+                answer_html = markdown.markdown(
+                    qa.get("answer", "")
+                )
                 st.markdown(f"""
                 <div class="qa-card">
-                  <div class="qa-q"><div class="qa-num">{idx+1}</div><div>{qa.get("question","")}</div></div>
-                  <div class="qa-a">{qa.get("answer","")}</div>
-                </div>""",unsafe_allow_html=True)
+                <div class="qa-q">
+                    <div class="qa-num">{idx+1}</div>
+                    <div>{qa.get("question","")}</div>
+                </div>
+                <div class="qa-a">
+                    {answer_html}
+                </div>
+                </div>
+                """, unsafe_allow_html=True)
             qa_text="\n\n".join([f"Q{i+1}: {q['question']}\n\nA: {q['answer']}" for i,q in enumerate(st.session_state.interview_qa)])
             st.download_button("📥 Download Q&A Sheet",data=qa_text,file_name=f"interview_{goal.replace(' ','_').lower()}.txt",mime="text/plain",use_container_width=True)
 
