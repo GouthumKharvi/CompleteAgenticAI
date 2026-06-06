@@ -22,3 +22,5 @@ python-dotenv>=1.0.0
 rich>=13.7.0
 
 plotly
+
+Markdown==3.10.2
