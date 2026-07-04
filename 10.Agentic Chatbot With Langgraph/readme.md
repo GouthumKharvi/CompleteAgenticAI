@@ -1,279 +1,210 @@
 <div align="center">
 
-# 🤖 GraphMind
-### ⚡ Agentic AI Chatbot powered by LangGraph + OpenRouter + Streamlit
+# 🤖 GraphMind AI Chatbot
+### Agentic AI Chatbot built with LangGraph, LangChain & OpenAI
 
-<img src="assets/demo.gif" width="900"/>
+<p align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-![LangGraph](https://img.shields.io/badge/LangGraph-Agentic%20AI-purple?style=for-the-badge)
-![OpenRouter](https://img.shields.io/badge/OpenRouter-GPT--4o--Mini-green?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red?style=for-the-badge&logo=streamlit)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![LangGraph](https://img.shields.io/badge/LangGraph-1.2.0-purple?style=for-the-badge)
+![LangChain](https://img.shields.io/badge/LangChain-1.2.1-green?style=for-the-badge)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-black?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-red?style=for-the-badge&logo=streamlit)
+
+</p>
+
+A production-style **Agentic AI Chatbot** powered by **LangGraph** featuring persistent conversations, streaming responses, thread management, and modern conversational UI.
+
+---
 
 </div>
 
----
+# 📖 Overview
 
-# 🌟 Overview
+GraphMind AI Chatbot demonstrates how to build an intelligent conversational AI system using **LangGraph's graph-based architecture** instead of traditional linear chains.
 
-GraphMind is an **Agentic AI Chatbot** built using **LangGraph**.
+Unlike standard chatbots, every conversation is represented as a workflow where state is preserved between interactions, making conversations persistent and resumable.
 
-Unlike a traditional chatbot, GraphMind uses **graph-based execution**, **persistent conversation threads**, **streaming responses**, and **memory management** to provide an intelligent conversational experience similar to ChatGPT.
+The project demonstrates modern Agentic AI concepts including:
 
-The application provides:
-
-- 💬 Multi-thread conversations
-- 🧠 Persistent memory
-- ⚡ Live streaming responses
-- 🔄 LangGraph workflow execution
-- 🎨 Beautiful glassmorphism Streamlit UI
-- 🚀 OpenRouter GPT-4o Mini integration
-
----
-
-# 🎥 Demo
-
-> Replace with your GIF
-
-```
-assets/demo.gif
-```
+- Stateful AI agents
+- Persistent conversation memory
+- Streaming responses
+- Thread management
+- Graph-based execution
+- Production-ready Streamlit interface
 
 ---
 
 # ✨ Features
 
-## 🤖 Intelligent Chatbot
+✅ Agentic AI Architecture
 
-- Natural conversations
-- GPT-4o Mini responses
-- Context-aware replies
+✅ LangGraph Workflow
 
----
+✅ Persistent Chat Memory
 
-## 🧠 Persistent Memory
+✅ Thread-Based Conversations
 
-Each conversation gets its own Thread ID.
+✅ Streaming Token Response
 
-This allows the chatbot to remember previous messages.
+✅ Conversation History
 
-```
-Conversation A
-    │
-Thread ID A
-    │
-Memory A
+✅ Modern Streamlit UI
 
-Conversation B
-    │
-Thread ID B
-    │
-Memory B
-```
+✅ OpenAI Integration
+
+✅ Clean Modular Codebase
 
 ---
 
-## ⚡ Streaming Responses
-
-Instead of waiting for the entire response...
+# 🏗 Project Architecture
 
 ```
-Generating...
+                     User
 
-Hello...
-How...
-Are...
-You...
-Today...
+                      │
+                      ▼
+
+             Streamlit Frontend
+
+                      │
+                      ▼
+
+          LangGraph Chat Workflow
+
+                      │
+          ┌───────────┴────────────┐
+          │                        │
+          ▼                        ▼
+
+    Conversation State      Checkpointer
+
+          │                        │
+          └───────────┬────────────┘
+                      ▼
+
+                 OpenAI GPT
+
+                      │
+                      ▼
+
+                AI Response
 ```
-
-Users receive responses token-by-token.
 
 ---
 
-## 🔀 LangGraph Workflow
+# 📂 Project Structure
 
 ```
-            START
-               │
-               ▼
-        Chat Node (LLM)
-               │
-               ▼
-              END
-```
+GraphMind-AI-Chatbot/
 
-Workflow execution is handled by LangGraph.
-
----
-
-## 💾 Memory Checkpointing
-
-The chatbot uses
-
-```
-MemorySaver()
-```
-
-which stores conversation history for every thread.
-
----
-
-## 🎨 Modern User Interface
-
-Features include
-
-- Glassmorphism
-- Animated Background
-- Floating Effects
-- Sidebar Threads
-- Beautiful Chat UI
-- Responsive Design
-
----
-
-# 🏗️ Project Structure
-
-```
-GraphMind
 │
+
 ├── app_chatbot.py
 ├── agentic_chatbot_backend.py
 ├── requirements.txt
-│
-├── assets
-│     ├── demo.gif
-│     ├── architecture.png
-│     └── ui.png
-│
-└── README.md
+├── .env
+├── README.md
+
 ```
 
 ---
 
-# ⚙️ Architecture
-
-```
-             User
-               │
-               ▼
-        Streamlit Frontend
-               │
-               ▼
-        LangGraph Workflow
-               │
-               ▼
-         Chat Node (LLM)
-               │
-               ▼
-      GPT-4o Mini (OpenRouter)
-               │
-               ▼
-        AI Response
-               │
-               ▼
-     MemorySaver Checkpoint
-               │
-               ▼
-        Streamlit UI
-```
-
----
-
-# 🔄 Workflow
-
-```
-START
-
-↓
-
-User Message
-
-↓
-
-LangGraph State
-
-↓
-
-Chat Node
-
-↓
-
-GPT-4o Mini
-
-↓
-
-MemorySaver
-
-↓
-
-Stream Response
-
-↓
-
-END
-```
-
----
-
-# 🧠 State Definition
-
-```python
-class ChatState(TypedDict):
-
-    messages: Annotated[
-        list[BaseMessage],
-        add_messages
-    ]
-```
-
-The state stores the complete chat history for every thread.
-
----
-
-# 💡 Technologies Used
+# ⚙ Technologies Used
 
 | Technology | Purpose |
 |------------|----------|
-| Python | Backend |
-| LangGraph | Workflow Engine |
-| LangChain OpenAI | LLM Wrapper |
-| OpenRouter | AI Model Provider |
-| GPT-4o Mini | Language Model |
-| Streamlit | Frontend |
-| MemorySaver | Persistence |
+| Python | Programming Language |
+| LangGraph | Agent Workflow Engine |
+| LangChain | LLM Integration |
+| OpenAI GPT | Language Model |
+| Streamlit | Frontend UI |
 | dotenv | Environment Variables |
 
 ---
 
-# 📦 Installation
+# 🧠 LangGraph Workflow
 
-Clone repository
+```
+          START
 
-```bash
-git clone https://github.com/yourusername/GraphMind.git
+             │
+
+             ▼
+
+      Chat Node (LLM)
+
+             │
+
+             ▼
+
+            END
 ```
 
-Move into project
+The workflow maintains conversation state throughout the session while automatically preserving message history.
 
-```bash
-cd GraphMind
+---
+
+# 💾 Persistence
+
+This project demonstrates LangGraph Persistence.
+
+Every conversation is stored inside a thread.
+
+```
+Thread-1
+
+User
+↓
+
+AI
+
+↓
+
+User
+
+↓
+
+AI
+
+↓
+
+Saved State
 ```
 
-Create environment
+This enables:
+
+- Resume conversations
+- Stateful interactions
+- Conversation history
+- Memory across requests
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
 
 ```bash
-conda create -n graphmind python=3.11
+git clone https://github.com/YOUR_USERNAME/GraphMind-AI-Chatbot.git
+
+cd GraphMind-AI-Chatbot
 ```
 
-Activate
+---
+
+## Create Environment
 
 ```bash
-conda activate graphmind
+conda create -n langgraph-test python=3.11
+
+conda activate langgraph-test
 ```
 
-Install dependencies
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -281,32 +212,15 @@ pip install -r requirements.txt
 
 ---
 
-# 🔑 Environment Variables
-
-Create a
+## Create .env
 
 ```
-.env
-```
-
-file
-
-```env
-OPENAI_API_KEY=your_openrouter_api_key
-OPENAI_BASE_URL=https://openrouter.ai/api/v1
+OPENAI_API_KEY=your_api_key
 ```
 
 ---
 
-# ▶️ Run Backend
-
-```bash
-python agentic_chatbot_backend.py
-```
-
----
-
-# ▶️ Run Streamlit App
+## Run Application
 
 ```bash
 streamlit run app_chatbot.py
@@ -314,128 +228,167 @@ streamlit run app_chatbot.py
 
 ---
 
-# 🖥️ User Interface
-
-| Home | Chat |
-|------|------|
-| Modern Sidebar | Streaming Responses |
-| Thread Management | Persistent Memory |
-| Beautiful Animations | ChatGPT Style |
-
----
-
-# 🧩 Conversation Threads
-
-Each chat gets a unique Thread ID.
+# 💬 Example Conversation
 
 ```
-Thread 1
+👤 User
 
-Hello
+Explain LangGraph Persistence.
 
-↓
+🤖 AI
 
-Memory
-
-↓
-
-Next Message
-
-↓
-
-Previous Context Available
-```
-
-Another thread starts fresh.
-
-```
-Thread 2
-
-Hello
-
-↓
-
-New Memory
+LangGraph Persistence automatically saves the
+graph state after every execution so conversations
+can resume from the last checkpoint.
 ```
 
 ---
 
-# 🚀 Future Improvements
-
-- Vector Database
-- RAG
-- Long-Term Memory
-- Tool Calling
-- Function Calling
-- Image Generation
-- Voice Chat
-- Multi-Agent Support
-- Authentication
-- Database Persistence
-- File Upload
-- PDF Chat
-- Internet Search
-
----
-
-# 📊 Tech Stack
+# 🔄 Workflow Execution
 
 ```
-Frontend
+User Input
 
-Streamlit
+      │
 
-↓
+      ▼
+
+State Update
+
+      │
+
+      ▼
 
 LangGraph
 
-↓
+      │
 
-OpenRouter
+      ▼
 
-↓
+OpenAI
 
-GPT-4o Mini
+      │
 
-↓
+      ▼
 
-MemorySaver
+Response Generation
+
+      │
+
+      ▼
+
+Checkpoint Saved
+
+      │
+
+      ▼
+
+Display Response
 ```
 
 ---
 
-# ⭐ Why LangGraph?
+# 🎯 Learning Objectives
 
-✔ Graph-based execution
+This project demonstrates:
 
-✔ Persistent memory
-
-✔ Streaming
-
-✔ Agent workflows
-
-✔ Thread management
-
-✔ Human-in-the-loop support
-
-✔ Production-ready architecture
+- LangGraph Fundamentals
+- Agentic AI
+- Stateful Workflows
+- Persistence
+- Checkpointing
+- Thread Management
+- Streaming
+- Chatbot UI Development
+- OpenAI Integration
 
 ---
 
-# 🙌 Acknowledgements
+# 📦 Requirements
 
-- LangGraph
-- LangChain
-- OpenRouter
-- Streamlit
-- OpenAI
+```
+langgraph==1.2.0
+
+langchain-openai==1.2.1
+
+python-dotenv==1.2.2
+
+pydantic==2.10.4
+
+streamlit==1.58.0
+```
+
+---
+
+# 🔮 Future Improvements
+
+- Google Gemini Support
+- Anthropic Claude Support
+- SQLite Checkpointer
+- PostgreSQL Checkpointer
+- Authentication
+- User Accounts
+- Chat Export
+- Voice Chat
+- Image Upload
+- File Upload
+- RAG Integration
+- Long-Term Memory
+- Tool Calling
+- Multi-Agent Collaboration
+
+---
+
+# 📸 Screenshots
+
+```
+Add screenshots here
+
+/assets/home.png
+
+/assets/chat.png
+
+/assets/history.png
+```
+
+---
+
+# 👨‍💻 Author
+
+**Gouthum Kharvi**
+
+AI Engineer | GenAI Developer | Machine Learning Enthusiast
+
+GitHub
+
+https://github.com/GouthumKharvi
+
+LinkedIn
+
+https://linkedin.com/in/Gouthum-Kharvi-2366a6219
+
+Portfolio
+
+https://gouthumkharvi.github.io/Datascience_Portfolio/
+
+---
+
+# ⭐ Support
+
+If you found this project helpful,
+
+⭐ Star the repository
+
+🍴 Fork the repository
+
+📢 Share it with others
 
 ---
 
 <div align="center">
 
-### ⭐ If you like this project, don't forget to star the repository!
+## Thank You ❤️
 
-Made with ❤️ using LangGraph
+Made with Python, LangGraph and OpenAI
 
 </div>
